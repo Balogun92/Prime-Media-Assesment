@@ -1,0 +1,21 @@
+<div class="grid__wrapper">
+
+<p class="header-text">Hello, grid 1 shows the paging for a data grid</p>
+
+  <igx-grid [igxPreventDocumentScroll]="true" #grid [data]="data" height="500px"
+
+      width="95%" primaryKey="ID">
+      <igx-column header="Id" headerClasses="myClass" field="id" dataType="number"></igx-column>
+      <igx-column field="name" header="Fullname"></igx-column>
+      <igx-column field="role" header="Role"></igx-column>
+      <igx-column field="dob" header="Date Of Birth" dataType="date"></igx-column>
+      <igx-column field="height" header="Height"></igx-column>
+      <igx-paginator #paginator [totalRecords]="20">
+        <igx-grid #grid [data]="data" [height]="'300px'" [width]="'100%'">
+          <igx-paginator [perPage]="5"></igx-paginator>
+      </igx-grid>
+    </igx-paginator>
+
+  </igx-grid>
+
+</div>

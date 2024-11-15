@@ -1,0 +1,26 @@
+<div class="grid__wrapper">
+  <p class="header-text">Staff Evaluation Report</p>
+  <p class="sub-header-text">This table displays the hierarchical grid and filtering</p>
+  <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="data" [autoGenerate]="false" [allowAdvancedFiltering]="true"
+      [height]="'500px'" [width]="'95%'" [rowHeight]="'60px'" #hierarchicalGrid>
+      <igx-grid-toolbar></igx-grid-toolbar>
+      <igx-column field="id" header="ID"></igx-column>
+      <igx-column field="name" header="Fullname"></igx-column>
+      <igx-column field="role" header="Role"></igx-column>
+      <igx-column field="dob" header="Date Of Birth" [dataType]="'date'"></igx-column>
+      <igx-column field="height" header="Height"></igx-column>
+      <igx-row-island [height]="null" [key]="'evaluation'" [autoGenerate]="false">
+      <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+      <igx-column field="behavioral" header="Behavioral" dataType="number"></igx-column>
+      <igx-column field="skill" header="Skill" dataType="number"></igx-column>
+      <igx-column field="education" header="Eductaion" dataType="number"></igx-column>
+      <igx-column field="fitToCom" header="Fit to company" dataType="number"></igx-column>
+      </igx-row-island>
+      <igx-paginator #paginator [totalRecords]="20">
+        <igx-grid #grid [data]="data" [height]="'300px'" [width]="'100%'">
+          <igx-paginator [perPage]="5"></igx-paginator>
+      </igx-grid>
+    </igx-paginator>
+  </igx-hierarchical-grid>
+</div>
+

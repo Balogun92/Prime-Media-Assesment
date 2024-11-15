@@ -1,0 +1,16 @@
+<div class="sample-wrapper">
+  <p class="header-text">Staff Evaluation Update</p>
+  <p class="sub-header-text">This table displays the data grid and editing</p>
+  <igx-grid [igxPreventDocumentScroll]="true" #gridRowEdit [data]="data" [primaryKey]="'id'" width="95%" height="500px" [rowEditable]="true">
+      <igx-column field="id" header="ID" dataType="number"></igx-column>
+      <igx-column field="name" header="Fullname" ></igx-column>
+      <igx-column field="role" header="Role" ></igx-column>
+      <igx-column field="dob" header="Date Of Birth" dataType="date"></igx-column>
+      <igx-column field="height" header="Height" ></igx-column>
+      <igx-paginator #paginator [totalRecords]="20">
+        <igx-grid #grid [data]="data" [height]="'300px'" [width]="'100%'">
+          <igx-paginator [perPage]="5"></igx-paginator>
+      </igx-grid>
+    </igx-paginator>
+  </igx-grid>
+</div>

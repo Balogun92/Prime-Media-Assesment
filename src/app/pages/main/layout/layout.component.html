@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://allprimetech.com/">
+      <img src="/public/assets/logo.png" alt="logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/main/paging" >Data Grid</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/main/sorting" >Tree Grid</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/main/filtering" >Hierarchical Grid</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/main/editing" >Editing Grid</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid main">
+  <router-outlet/>
+</div>

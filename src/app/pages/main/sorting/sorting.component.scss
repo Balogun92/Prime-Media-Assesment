@@ -1,0 +1,17 @@
+.header-text{
+  font-size: large;
+  font-weight: bolder;
+}
+.grid__wrapper {
+  --ig-size: var(--ig-size-small);
+  margin: 0 16px;
+  padding-top: 16px;
+}
+
+.igx-grid-toolbar ::ng-deep {
+  .igx-grid-toolbar__custom-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+  }
+}

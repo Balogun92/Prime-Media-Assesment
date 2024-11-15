@@ -1,0 +1,53 @@
+
+<div class="grid__wrapper" (window:click)="disableContextMenu()">
+  <p class="header-text">Hello, grid 2 shows the sorting for a tree grid</p>
+
+  <igx-tree-grid [igxPreventDocumentScroll]="true" #sortingGrid [data]="data" [autoGenerate]="false" height="500px" width="95%"
+      primaryKey="id" foreignKey="ParentID" (contextMenu)="rightClick($event)" [sortingOptions]="sortingOptions">
+      <igx-grid-toolbar>
+          <button class="button-opitions" igxButton="contained" (click)="sortingGrid.sortingExpressions = []">
+              Clear Sorting
+          </button>
+          <button class="button-opitions" igxButton="contained" (click)="groupArea.expressions = []">
+              Clear Grouped columns
+          </button>
+          <igx-grid-toolbar-actions>
+              <igx-simple-combo #comboItem
+                  [data]="sortingTypes"
+                  [displayKey]="'mode'"
+                  [(ngModel)]="sortingOptions"
+                  (keydown)="handleSearchResults($event)">
+                  <ng-template igxComboClearIcon></ng-template>
+                  <ng-template igxComboItem let-item>
+                      <div>{{ item.mode}}</div>
+                  </ng-template>
+              </igx-simple-combo>
+          </igx-grid-toolbar-actions>
+      </igx-grid-toolbar>
+
+      <igx-tree-grid-group-by-area
+          #groupArea
+          [grid]="sortingGrid"
+          [hideGroupedColumns]="true">
+      </igx-tree-grid-group-by-area>
+      <igx-column field="id" header="ID" [groupable]="true" [sortable]="true">
+      </igx-column>
+      <igx-column field="name" header="Fullnamet" [groupable]="true" [sortable]="true">
+      </igx-column>
+      <igx-column field="role" header="Role" [groupable]="true" [sortable]="true">
+      </igx-column>
+      <igx-column field="dob"  header="Date Of Birth" [dataType]="'date'" [groupable]="true" [sortable]="true">
+      </igx-column>
+      <igx-column field="height" header="Height" [groupable]="true" [sortable]="true">
+      </igx-column>
+
+      <igx-paginator #paginator [totalRecords]="20">
+        <igx-grid #grid [data]="data" [height]="'300px'" [width]="'100%'">
+          <igx-paginator [perPage]="5"></igx-paginator>
+      </igx-grid>
+    </igx-paginator>
+  </igx-tree-grid>
+  <!-- <div *ngIf="contextmenu">
+      <app-tree-grid-contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell"></app-tree-grid-contextmenu>
+  </div> -->
+</div>

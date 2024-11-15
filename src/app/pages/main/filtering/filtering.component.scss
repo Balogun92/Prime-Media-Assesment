@@ -1,0 +1,23 @@
+.grid__wrapper {
+  --ig-size: var(--ig-size-medium);
+  margin: 0 16px;
+  padding-top: 10px;
+}
+
+.photo {
+  vertical-align: middle;
+  max-height: 62px;
+}
+.cell__inner_2 {
+  margin: 1px
+}
+.header-text{
+  font-size: large;
+  font-weight: bolder;
+}
+
+.sub-header-text{
+  font-size: small;
+  font-weight: bolder;
+}
+
